@@ -2,7 +2,7 @@ import './CoolCoffee.css';
 function CoolCoffee(props) {
     return (
         <div className="cool-coffee">
-            <span className="prompt">How cool do you want your coffee to be?</span>
+            <span className="prompt">{props.prompt}</span>
             <span className="number">{props.number}</span>
         </div>
     );
