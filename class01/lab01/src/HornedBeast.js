@@ -1,9 +1,9 @@
-function HornedBeast() {
+function HornedBeast(props) {
     return (
         <>
-        <h2 className="title">Title of Horned Beast</h2>
-        <img className="imageUrl" src="" alt="" title="" />
-        <p className="description">A unicorn and a narwhal nuzzling their horns</p>
+        <h2 className="title">{props.title}</h2>
+        <img className="imageUrl" src={props.image_url} alt="" title="" />
+        <p className="description">{props.description}</p>
         </>
     );
 }
