@@ -2,8 +2,8 @@ import './CoolCoffee.css';
 function CoolCoffee() {
     return (
         <div className="cool-coffee">
-            <p>How cool do you want your coffee to be?</p>
-            <p>40</p>
+            <span className="prompt">How cool do you want your coffee to be?</span>
+            <span className="number">40</span>
         </div>
     );
 }

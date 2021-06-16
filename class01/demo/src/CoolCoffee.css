@@ -1,0 +1,15 @@
+.cool-coffee {
+    background: tan;
+    display: flex;
+    border: 1px solid gray;
+}
+
+.prompt {
+    flex: 1;
+    padding: 10px;
+    font-size: 2em;
+}
+
+.number {
+    flex: .5;
+}

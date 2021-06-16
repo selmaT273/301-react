@@ -9,6 +9,7 @@ function App() {
       <h1>Cool Coffee</h1>
       <Header />
       <CoolCoffee />
+      <CoolCoffee />
       </>
   );
 }
