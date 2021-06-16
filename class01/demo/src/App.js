@@ -8,8 +8,8 @@ function App() {
       <>
       <h1>Cool Coffee</h1>
       <Header />
-      <CoolCoffee />
-      <CoolCoffee />
+      <CoolCoffee number="42" prompt="how cool do you want your coffee?"/>
+      <CoolCoffee number="45" prompt="how cool do you want your coffee?"/>
       </>
   );
 }
