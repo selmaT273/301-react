@@ -1,10 +1,11 @@
-function Main() {
+import './CoolCoffee.css';
+function CoolCoffee() {
     return (
-        <div>
+        <div className="cool-coffee">
             <p>How cool do you want your coffee to be?</p>
             <p>40</p>
         </div>
     );
 }
 
-export default Main;
+export default CoolCoffee;
