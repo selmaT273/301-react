@@ -1,9 +1,11 @@
+import React from 'react';
+
 function HornedBeast(props) {
     return (
         <>
-        <h2 className="title">{props.title}</h2>
-        <img className="imageUrl" src={props.image_url} alt="" title="" />
-        <p className="description">{props.description}</p>
+        <h2>{props.title}</h2>
+        <img title={props.name} alt={props.name + "image"} src={props.imgUrl} />
+        <p>{props.description}</p>
         </>
     );
 }
