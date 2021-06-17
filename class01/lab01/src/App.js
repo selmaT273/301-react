@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
@@ -12,5 +12,3 @@ function App() {
     </>
   );
 }
-
-export default App;

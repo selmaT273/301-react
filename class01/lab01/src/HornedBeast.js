@@ -1,4 +1,4 @@
-function HornedBeast(props) {
+export default function HornedBeast(props) {
     return (
         <>
         <h2>{props.title}</h2>
@@ -7,5 +7,3 @@ function HornedBeast(props) {
         </>
     );
 }
-
-export default HornedBeast;

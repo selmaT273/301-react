@@ -1,7 +1,7 @@
 import HornedBeast from './HornedBeast';
 import hornedBeasts from './data';
 
-function Main() {
+export default function Main() {
     let myBeasts = [];
     hornedBeasts.forEach(hornedBeast => {
         myBeasts.push(<HornedBeast name={hornedBeast.name} title={hornedBeast.title} imgUrl={hornedBeast.image_url} description={hornedBeast.description} />)
@@ -12,5 +12,3 @@ function Main() {
         </main>
     )
 }
-
-export default Main;
