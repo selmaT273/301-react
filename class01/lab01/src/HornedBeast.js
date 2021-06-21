@@ -1,33 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './hornedBeast.css'
 
-export default function HornedBeast(props) {
-    const [count, setCount] = useState('');
-
-    const imageClicked = () => {
-        setCount(count + '♥');
+class HornedBeast extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: ''
+        }
     }
 
-    return (
-        <Card className="card" bg="light" style={{ width: '18rem'}}>
-            <Card.Header>
-                {props.title}
-                <Card.Subtitle className="mb-2 text-muted">
-                    {props.description}
-                </Card.Subtitle>
-            </Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    Your votes: {count}
-                </Card.Text>
-                <Card.Img
-                    onClick={imageClicked} 
-                    title={props.name} 
-                    alt={props.name + "image"} 
-                    src={props.imgUrl}
-                />
-            </Card.Body> 
-        </Card>
-    );
+    imageClicked = () => {
+        this.setState({
+            count: this.state.count + '♥'
+        });
+    }
+
+    render() {
+        return (
+            <Card className="card" bg="light" style={{ width: '18rem'}}>
+                <Card.Header>
+                    {this.props.title}
+                    <Card.Subtitle className="mb-2 text-muted">
+                        {this.props.description}
+                    </Card.Subtitle>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                        Your votes: {this.state.count}
+                    </Card.Text>
+                    <Card.Img
+                        onClick={this.imageClicked} 
+                        title={this.props.name} 
+                        alt={this.props.name + "image"} 
+                        src={this.props.imgUrl}
+                    />
+                </Card.Body> 
+            </Card>
+        );
+    }
 }
+
+export default HornedBeast;
