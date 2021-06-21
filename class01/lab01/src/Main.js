@@ -8,8 +8,8 @@ class Main extends React.Component {
         return (
             <>
             <CardColumns className="card-columns">
-                {this.props.data.map((hornedBeast) => (<HornedBeast 
-                    key={hornedBeast.image_url} 
+                {this.props.data.map((hornedBeast, index) => (<HornedBeast 
+                    key={index} 
                     name={hornedBeast.name} 
                     title={hornedBeast.title} 
                     imgUrl={hornedBeast.image_url} 
