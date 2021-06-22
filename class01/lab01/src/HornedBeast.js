@@ -22,8 +22,8 @@ class HornedBeast extends React.Component {
 
     render() {
         return (
-            <Card className="card" bg="light" style={{ width: '18rem'}}>
-                <Card.Header onClick={this.showModal}>
+            <Card className="card" bg="light">
+                <Card.Header className="card-header" onClick={this.showModal}>
                     {this.props.title}
                     <Card.Subtitle className="mb-2 text-muted">
                         {this.props.description}
