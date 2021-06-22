@@ -1,14 +1,25 @@
 import HornedBeast from './HornedBeast';
-import hornedBeasts from './data';
 import CardColumns from 'react-bootstrap/CardColumns';
 import './main.css';
+import React from 'react';
 
-export default function Main() {
-    let myBeasts = [];
-    hornedBeasts.forEach(hornedBeast => {
-        myBeasts.push(<HornedBeast key={hornedBeast.image_url} name={hornedBeast.name} title={hornedBeast.title} imgUrl={hornedBeast.image_url} description={hornedBeast.description} />)
-    })
-    return (
-        <CardColumns className="card-columns">{myBeasts}</CardColumns>
-    )
+class Main extends React.Component {
+    render() {
+        return (
+            <>
+            <CardColumns className="card-columns">
+                {this.props.data.map((hornedBeast, index) => (<HornedBeast 
+                    key={index} 
+                    name={hornedBeast.name} 
+                    title={hornedBeast.title} 
+                    imgUrl={hornedBeast.image_url} 
+                    description={hornedBeast.description}
+                    handleShow={this.props.handleShow} />)
+                )}
+            </CardColumns>
+            </>
+        )
+    }
 }
+
+export default Main;

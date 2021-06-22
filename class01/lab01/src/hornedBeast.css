@@ -1,4 +1,9 @@
 .card {
     break-inside: avoid;
     margin-bottom: 2em;
+    width: 18rem;
+}
+
+.card-header:hover {
+    cursor: pointer;
 }
