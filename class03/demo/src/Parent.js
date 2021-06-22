@@ -10,7 +10,7 @@ class Parent extends React.Component {
         }
     }
 
-    // this is being passed to child in the <Child /> component down in the return
+    // this is being passed to child in the <Child /> component down in the return so that we can get the info we need from the child (ie that they've asked for food) and send it back up to the parent for the parent to handle the logic of giving the child a macaron
     giveMacaron = () => {
         // change state with this.setState then pass in the properties that should be changed
         this.setState({
@@ -19,7 +19,7 @@ class Parent extends React.Component {
         })
     }
 
-    // display whatever state currently is at with {this.state.STATEVAR}
+    // display whatever state currently is at with {this.state.NAMEOFSTATEVAR}
     render(){
         return(
             <>
@@ -30,7 +30,8 @@ class Parent extends React.Component {
                 handleMacarons={this.giveMacaron}
             />
             </>
-            // pass aesonsMacarons to child component via props
+            // pass aesonsMacarons to child component via props called aesonTotal
+            // handleMacarons is a property, and we've assigned this.giveMacaron to that property to be passed into the Child component 
         )
     }
 }
