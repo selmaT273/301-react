@@ -10,6 +10,10 @@ class HornedBeast extends React.Component {
         }
     }
 
+    showModal = () => {
+        this.props.handleShow(this.props.title);
+    }
+
     imageClicked = () => {
         this.setState({
             count: this.state.count + '♥'
@@ -19,7 +23,7 @@ class HornedBeast extends React.Component {
     render() {
         return (
             <Card className="card" bg="light" style={{ width: '18rem'}}>
-                <Card.Header>
+                <Card.Header onClick={this.showModal}>
                     {this.props.title}
                     <Card.Subtitle className="mb-2 text-muted">
                         {this.props.description}

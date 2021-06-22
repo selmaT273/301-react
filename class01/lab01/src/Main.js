@@ -13,7 +13,8 @@ class Main extends React.Component {
                     name={hornedBeast.name} 
                     title={hornedBeast.title} 
                     imgUrl={hornedBeast.image_url} 
-                    description={hornedBeast.description} />)
+                    description={hornedBeast.description}
+                    handleShow={this.props.handleShow} />)
                 )}
             </CardColumns>
             </>
