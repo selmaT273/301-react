@@ -10,7 +10,7 @@ class Child extends React.Component {
 
     render(){
         let animalPics = data;
-        console.log(animalPics);
+        console.log('child props', this.props);
         let picElements = animalPics.map((pic, index) => (
             <img
                 src={pic}
@@ -18,6 +18,7 @@ class Child extends React.Component {
                 title="horns"
                 width={150}
                 key={index}
+                onClick={() => this.props.sendToChild(pic)}
             />
         ))
         // using this.props allows us to access the props(in this case, an object) that we sent over from the parent

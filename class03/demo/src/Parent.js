@@ -21,6 +21,7 @@ class Parent extends React.Component {
 
     // display whatever state currently is at with {this.state.NAMEOFSTATEVAR}
     render(){
+        console.log('parent props', this.props);
         return(
             <>
             <h2>A + P's parent</h2>
@@ -28,6 +29,7 @@ class Parent extends React.Component {
             <Child 
                 aesonTotal={this.state.aesonsMacarons} 
                 handleMacarons={this.giveMacaron}
+                sendToChild={this.props.sendPic}
             />
             </>
             // pass aesonsMacarons to child component via props called aesonTotal
