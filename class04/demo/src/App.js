@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Header from './Header';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
   render(){
     return(
       <>
-      <h1>Hello {this.state.username}</h1>
+      <Header username={this.state.username}></Header>
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name</label>
         <input id="name" name="name" type="text" onInput={this.handleUsername}/>
