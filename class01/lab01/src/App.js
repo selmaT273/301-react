@@ -34,16 +34,15 @@ class App extends React.Component {
 
   handleForm = e => {
     e.preventDefault();
-    console.log(e.target.value);
-    const matchingHorns = beastData.filter(hornedBeast => hornedBeast.horns == e.target.value);
-    console.log(matchingHorns);
-    if(e.target.value == 0){
+    const numberOfHorns = parseInt(e.target.value);
+    const matchingHorns = beastData.filter(hornedBeast => hornedBeast.horns === numberOfHorns);
+    if(numberOfHorns === 0){
       this.setState({
         hornedBeastsData: beastData
       })
     } else {
       this.setState({
-        numberClicked: e.target.value,
+        numberClicked: numberOfHorns,
         hornedBeastsData: matchingHorns
       })
     } 
