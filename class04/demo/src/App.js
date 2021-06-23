@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './Header';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,23 +34,23 @@ class App extends React.Component {
     return(
       <>
       <Header username={this.state.username}></Header>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input id="name" name="name" type="text" onInput={this.handleUsername}/>
-        <br />
-        <label htmlFor="dob">Date of Birth</label>
-        <input type="date" name="dob" id="dob" />
-        <br />
-        <input type="submit" />
-      </form>
       <Container>
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId="bootstrap-name">
             <Form.Label>
               Name
             </Form.Label>
-            <Form.Control type="text" />
+            <Form.Control type="text" onInput={this.handleUsername}/>
           </Form.Group>
+          <Form.Group controlId="bootstrap-date">
+            <Form.Label>
+              Date
+            </Form.Label>
+            <Form.Control type="date" />
+          </Form.Group>
+          <Button variant="secondary" type="submit">
+            Submit
+          </Button>
         </Form>
       </Container>
       </>
