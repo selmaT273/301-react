@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ''
+      username: 'human'
     }
   }
 
@@ -17,9 +17,15 @@ class App extends React.Component {
   }
 
   handleUsername = e => {
-    this.setState({
-      username: e.target.value
-    });
+    if(e.target.value.length > 0){
+      this.setState({
+        username: e.target.value
+      });
+    } else {
+      this.setState({
+        username: 'human'
+      })
+    }
   }
 
   render(){
