@@ -37,10 +37,16 @@ class App extends React.Component {
     console.log(e.target.value);
     const matchingHorns = beastData.filter(hornedBeast => hornedBeast.horns == e.target.value);
     console.log(matchingHorns);
-    this.setState({
-      numberClicked: e.target.value,
-      hornedBeastsData: matchingHorns
-    })
+    if(e.target.value == 0){
+      this.setState({
+        hornedBeastsData: beastData
+      })
+    } else {
+      this.setState({
+        numberClicked: e.target.value,
+        hornedBeastsData: matchingHorns
+      })
+    } 
   }
 
   render() {
@@ -51,7 +57,7 @@ class App extends React.Component {
         <Form.Group controlId="dropdown">
           <Form.Label>Filter by # of Horns</Form.Label>
           <Form.Control as="select" onChange={this.handleForm} custom>
-            <option>Select a number</option>
+            <option value="0">Select a number</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
