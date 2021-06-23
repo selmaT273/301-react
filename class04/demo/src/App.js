@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Header from './Header';
-
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,6 +42,16 @@ class App extends React.Component {
         <br />
         <input type="submit" />
       </form>
+      <Container>
+        <Form>
+          <Form.Group controlId="bootstrap-name">
+            <Form.Label>
+              Name
+            </Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+        </Form>
+      </Container>
       </>
     )
   }
