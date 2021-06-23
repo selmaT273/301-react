@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Main from './Main';
 import beastData from './data.json';
 import SelectedBeast from './SelectedBeast';
+import Form from 'react-bootstrap/Form';
+
 class App extends React.Component { 
   constructor(props){
     super(props);
@@ -33,6 +35,17 @@ class App extends React.Component {
     return (
       <>
       <Header />
+      <Form>
+        <Form.Group controlId="dropdown">
+          <Form.Label>Filter by # of Horns</Form.Label>
+          <Form.Control as="select" custom>
+            <option>Select a number</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </Form.Control>
+        </Form.Group>
+      </Form>
       <Main 
         data={this.state.hornedBeastsData} 
         handleShow={this.handleShow}
