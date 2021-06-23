@@ -14,7 +14,7 @@ class App extends React.Component {
       hornedBeastsData: beastData,
       show: false,
       beastClicked: {},
-      numberClicked: ''
+      numberClicked: 0
     }
   }
 
@@ -35,8 +35,9 @@ class App extends React.Component {
   handleForm = e => {
     e.preventDefault();
     console.log(e.target.value);
+    const numberClicked = beastData.filter(hornedBeast => hornedBeast.horns == e.target.value);
+    console.log(numberClicked);
   }
-
 
   render() {
     return (
