@@ -34,9 +34,13 @@ class App extends React.Component {
 
   handleForm = e => {
     e.preventDefault();
+    // if numberClicked is 0, show all beastData... else, show matchingHorns
     console.log(e.target.value);
-    const numberClicked = beastData.filter(hornedBeast => hornedBeast.horns == e.target.value);
-    console.log(numberClicked);
+    const matchingHorns = beastData.filter(hornedBeast => hornedBeast.horns == e.target.value);
+    console.log(matchingHorns);
+    this.setState({
+      numberClicked: matchingHorns
+    })
   }
 
   render() {
