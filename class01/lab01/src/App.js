@@ -13,7 +13,8 @@ class App extends React.Component {
     this.state = {
       hornedBeastsData: beastData,
       show: false,
-      beastClicked: {}
+      beastClicked: {},
+      numberClicked: ''
     }
   }
 
@@ -22,14 +23,20 @@ class App extends React.Component {
     this.setState({
         show: true,
         beastClicked: beastClicked
-    })
+    });
   }
 
   handleClose = () => {
     this.setState({
         show: false
-    })
+    });
   }
+
+  handleForm = e => {
+    e.preventDefault();
+    console.log(e.target.value);
+  }
+
 
   render() {
     return (
@@ -38,11 +45,11 @@ class App extends React.Component {
       <Form>
         <Form.Group controlId="dropdown">
           <Form.Label>Filter by # of Horns</Form.Label>
-          <Form.Control as="select" custom>
+          <Form.Control as="select" onChange={this.handleForm} custom>
             <option>Select a number</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </Form.Control>
         </Form.Group>
       </Form>
