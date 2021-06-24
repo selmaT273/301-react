@@ -8,7 +8,8 @@ class App extends React.Component {
 
     this.state = {
       title: '',
-      director: ''
+      director: '',
+      haveData: false
     }
   }
 
@@ -20,15 +21,20 @@ class App extends React.Component {
     let filmData = await axios.get(data.data.films[0]);
     this.setState({
       title: filmData.data.title,
-      director: filmData.data.director
+      director: filmData.data.director,
+      haveData: true
     })
   }
 
   render(){
     return(
       <>
-      <h1 onClick={this.handleFetch}>hellllllloooo</h1>
-      <h2>The movie {this.state.title} was directed by {this.state.director}</h2>
+      <h1 onClick={this.handleFetch}>
+        May the force be with you
+      </h1>
+      { this.state.haveData ? 
+        (<h2>The movie {this.state.title} was directed by {this.state.director}</h2>) 
+        : '' }
       </>
     )
   }
